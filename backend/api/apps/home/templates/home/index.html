@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title_ %}
+<title>
+
+    {{site.title}}
+</title>{% endblock title_ %}
+{% block insert %}
+<img src="{{ site.background.url }}" class="fixed-top w-100 h-100" 
+     style="object-fit: cover; z-index: -1; pointer-events: none;" alt="Background">
+
+<div class="container-fluid px-4 py-5 my-5 text-center">
+            <div class="lc-block mb-4">
+            <div editable="rich">
+                <h2 class="display-2 fw-bold text-light">{{ site.fname }} <span class="text-danger">{{ site.lname }}</span></h2>
+            </div>
+        </div>
+        <div class="lc-block col-lg-6 mx-auto mb-5">
+            <div editable="rich">
+
+                <p class="lead text-light"> {{ site.heading }}</p>
+            </div>
+        </div>
+
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> 
+            <a class="btn btn-danger btn-lg px-4 gap-3 mx-4" href="/api/projects/" role="button">My Projects</a>
+            <a class="btn btn-danger btn-lg px-4 gap-3 mx-4" href="/api/socials/" role="button">My Socials</a>
+            <a class="btn btn-outline-secondary btn-lg px-4 mx-4 text-light" href="/api/blogs/" role="button">My Blogs</a>
+            <a class="btn btn-outline-secondary btn-lg px-4 mx-4 text-light" href="/api/certificates/" role="button">My Certificates</a>
+        </div>
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center">
+           <img src="{{ site.my_pic.url }}" class="rounded-circle d-block mx-auto w-25 mx-4" style = " border: 5px solid #f65454; object-fit: cover;" alt="Circular image description">
+        </div>
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5 mt-4"> 
+            <a class="btn btn-outline-secondary btn-lg px-4 mx-4 text-light" href="/api/contact/" role="button">Contact me!</a>
+        </div>
+        <div editable="rich">
+                <p class="lead text-light"> {{ site.desc }}</p>
+            </div>
+    </div>
+
+{% endblock insert %}

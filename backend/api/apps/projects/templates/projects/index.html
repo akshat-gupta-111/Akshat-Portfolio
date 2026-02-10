@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block insert %}
+<div class="row">
+{% for card in card_list %}
+<div class="col-md-4 p-5">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ card.title }}</h5>
+    <p class="card-text">{{ card.desc }}</p>
+    <p class="card-text"><small class="text-muted"><a href="{{ card.git_link }}">Github</a></small></p>
+    {% if card.is_available  %}
+    <p class="card-text"><small class="text-muted"><a href="{{ card.live_link }}">See it in Working!</a></small></p>
+    {% endif %}
+  </div>
+  <img class="card-img-bottom" src="{{ card.media.url }}}" alt="image">
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock insert %}

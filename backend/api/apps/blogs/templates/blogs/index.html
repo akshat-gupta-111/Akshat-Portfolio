@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block insert %}
+<div class="row">
+{% for card in blog_data %}
+<div class="col-md-4 p-5">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ card.title }}</h5>
+    <p class="card-text">{{ card.desc }}</p>
+    <p class="card-text"><small class="text-muted"><a href="/api/blogs/{{ card.id }}/">Goto blog!</a></small></p>
+  </div>
+  <img class="card-img-bottom" src="{{ card.media.url }}}" alt="image">
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock insert %}

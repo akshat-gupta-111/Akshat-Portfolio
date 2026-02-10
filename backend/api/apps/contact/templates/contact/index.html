@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block insert %}
+<form method="POST" action="">
+  {% csrf_token %}
+  <div class="form-group">
+  <div class="col">
+    <label for="name" class="text-light">Name:</label>
+      <input name="uname" id="name" type="text" class="form-control w-50" placeholder="Enter name">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col">
+    <label class="text-light" for="exampleFormControlInput1">Email address:</label>
+    <input  name = "email" type="email" class="form-control w-50" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div> </div>
+<div class="form-group">
+  <div class="col">
+  <label for="phone" class="text-light">Phone Number:</label>
+  <input name = "phone" type="tel" class="form-control w-50" id="phone" placeholder="(+91) 45-7890-8910">
+</div>
+</div>
+<div class="form-group">
+  <div class="col">
+    <label for="subject" class="text-light">Subject: </label>
+      <input name = "subject" id="subject" type="text" class="form-control w-50" placeholder="Enter Subject">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col">
+    <label class="text-light" for="exampleFormControlTextarea1">Message: </label>
+    <textarea name = "message" class="form-control w-50" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  </div>
+  <div class="form-group">
+    <div class="col col-md-6 mx-auto">
+    <button class="btn btn-outline-danger" type="submit">Submit</button>
+    </div>
+  </div>
+</form>
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }} text-light"{% endif %}>
+        
+        <div class="alert alert-success w-50" role="alert">
+  {{ message }}</div> 
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endblock insert %}

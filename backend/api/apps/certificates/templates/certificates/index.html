@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block insert %}
+<div class="row">
+{% for card in card_list %}
+<div class="col-md-4 p-5">
+<div class="card mb-3">
+  <img class="card-img-top" src="{{ card.media.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ card.title }}</h5>
+    <p class="card-text">{{ card.desc }}</p>
+    <p class="card-text"><small class="text-muted">verification code: {{ card.verify }}</small></p>
+    <p class="card-text"><small class="text-muted"><a href="{{ card.link }}">click here!</a></small></p>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock insert %}
