@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-6-+92hy^=2=azp**3cpv-@vq4d1zzytlyjsc%6ps%7=5o$5moa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['akshat-portfolio-24ee.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1','akshat-portfolio-24ee.onrender.com']
 
 
 # Application definition
@@ -179,3 +179,10 @@ DATABASES = {
         'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
     }
 }
+
+# Looking to send emails in production? Check out our Email API/SMTP product!
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_USE_TLS = True

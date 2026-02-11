@@ -27,11 +27,12 @@
             <a class="btn btn-outline-secondary btn-lg px-4 mx-4 text-light" href="/api/blogs/" role="button">My Blogs</a>
             <a class="btn btn-outline-secondary btn-lg px-4 mx-4 text-light" href="/api/certificates/" role="button">My Certificates</a>
         </div>
+         <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> 
+            <a class="btn btn-danger btn-lg px-4 gap-3 mx-4" href="/api/achievements/" role="button">My Achievements</a>
+            <a class="btn btn-outline-secondary btn-lg px-4 mx-4 text-light" href="/api/contact/" role="button">Contact me!</a>
+         </div>
         <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center">
            <img src="{{ site.my_pic.url }}" class="rounded-circle d-block mx-auto w-25 mx-4" style = " border: 5px solid #f65454; object-fit: cover;" alt="Circular image description">
-        </div>
-        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5 mt-4"> 
-            <a class="btn btn-outline-secondary btn-lg px-4 mx-4 text-light" href="/api/contact/" role="button">Contact me!</a>
         </div>
         <div editable="rich">
                 <p class="lead text-light"> {{ site.desc }}</p>
