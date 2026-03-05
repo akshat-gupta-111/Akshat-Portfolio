@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: deploy-nginx
+  name: deploy-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy-nginx
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: deploy-nginx
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - image: akshat833/portfolio-app:latest
+        name: portfolio-app
+        ports:
+        - containerPort: 3000
+status: {}
